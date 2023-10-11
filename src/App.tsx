@@ -1,4 +1,3 @@
-import { Assest } from "./components/Assest";
 import NavBar from "./components/NavBar"
 import Assests from "./views/Assests";
 import Dashboard from "./views/Dashboard"

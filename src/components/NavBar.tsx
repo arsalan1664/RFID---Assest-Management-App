@@ -2,7 +2,9 @@
 import { UserAvatar } from "./Avatar"
 import { Assest } from "./Assest"
 import { Search } from "./Search"
-
+import {
+    Link
+} from "react-router-dom";
 
 import { ThemMode } from "./ThemeToggle"
 import { Button } from "./ui/button"
@@ -17,7 +19,11 @@ function NavBar() {
                     <h1 className="text-3xl font-mono tracking-wide">RFID PAKISTAN</h1>
 
                     <div className="flex gap-2">
-                        <Button variant={"link"}>Dashboard</Button>
+                        <Button variant={'link'} className="hover:no-underline ">
+                            
+                            <Link to={'/'}>Dashboard</Link>
+                        </Button>
+
                         <Assest />
                         <Assest />
                     </div>

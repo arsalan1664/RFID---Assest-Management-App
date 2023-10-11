@@ -5,13 +5,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 function Dashboard() {
     return (
-        <div className="h-screen">
-            <div className="flex-1  p-8 pt-6">
-                <div className="flex  items-center justify-between space-y-2 p-8 pt-6">
-                    <h2 className="text-4xl font-bold tracking-tight">Dashboard</h2>
-                    
+        <div className="">
+            <div className="flex-1  px-8 py-4 ">
+                <div className="flex  items-center justify-start w-full space-y-2 p-3 pl-8">
+                    <h2 className="text-4xl font-bold tracking-tight">Dashboard</h2>     
                 </div>
-                <Tabs defaultValue="overview" className="space-y-4 p-8 pt-6">
+                <Tabs defaultValue="overview" className="space-y-4 p-8 pt-2">
                     <TabsList>
                         <TabsTrigger value="overview">Overview</TabsTrigger>
                         <TabsTrigger value="analytics" disabled>
@@ -28,7 +27,7 @@ function Dashboard() {
                     {/* cards */}
                     <TabsContent value="overview" className="space-y-4">
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                            <Card>
+                            <Card className="">
                                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                     <CardTitle className="text-sm font-medium">
                                         Total Revenue

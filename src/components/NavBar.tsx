@@ -10,8 +10,8 @@ import { Button } from "./ui/button"
 
 function NavBar() {
     return (
-        <div className="fixed h-16  top-0 w-full  border-b">
-            <div className="mx-6 my-3 flex items-center   h-auto w-['85%']">
+        <div className=" h-16   w-full  border-b">
+            <div className="mx-6 my-4 flex items-center   h-auto w-['85%']">
                 <div className="flex items-center justify-between w-full h-full">
 
                     <h1 className="text-3xl font-['Poppin'] tracking-widest">RFID Pakistan</h1>

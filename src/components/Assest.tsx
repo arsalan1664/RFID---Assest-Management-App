@@ -15,7 +15,7 @@ export function Assest() {
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>Assest</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>Assests</NavigationMenuTrigger>
                     {/* Inide */}
                     <NavigationMenuContent>
                         {/* 1 */}

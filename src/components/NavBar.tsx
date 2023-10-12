@@ -19,12 +19,13 @@ function NavBar() {
                     <h1 className="text-3xl font-mono tracking-wide">RFID PAKISTAN</h1>
 
                     <div className="flex gap-2">
-                        <Button variant={'link'} className="hover:no-underline ">
-                            
+                        <Button variant={'outline'} className="hover:no-underline ">  
                             <Link to={'/'}>Dashboard</Link>
                         </Button>
 
-                        <Assest />
+                        <Button variant={'outline'} className="hover:no-underline ">  
+                            <Link to={'/assests'}>Assests</Link>
+                        </Button>
                         <Assest />
                     </div>
 

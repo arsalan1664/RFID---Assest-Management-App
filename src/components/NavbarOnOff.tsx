@@ -24,6 +24,4 @@ function NavBarOnOff({ children }: { children: React.ReactNode }) {
 
 export default NavBarOnOff
 
-function or(arg0: string) {
-  throw new Error("Function not implemented.")
-}
+

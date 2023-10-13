@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/Sidebar"
-import { DataTable } from "@/components/DataTable"
-import { DailogButton } from "@/components/DailogButton"
+// import { DataTable } from "@/components/DataTable"
+// import { DailogButton } from "@/components/DailogButton"
+import { Outlet } from "react-router-dom"
 
 function Assests() {
     return (
@@ -8,8 +9,8 @@ function Assests() {
             <Sidebar />
             <div className="col-span-3 lg:col-span-4 lg:border-l">
                 <div className="h-full px-4 py-6 lg:px-8">
-                    {/* rightbar */}
-                    <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
+                    {/* rightbar start*/}
+                    {/* <div className="hidden h-full flex-1 flex-col space-y-8 p-8 md:flex">
                         <div className="flex items-center justify-between space-y-2">
                             <div>
                                 <h2 className="text-2xl font-bold tracking-tight">Assest</h2>
@@ -22,7 +23,10 @@ function Assests() {
                             </div>
                         </div>
                         <DataTable/>
-                    </div>
+                    </div> */}
+                    {/* rightbar end */}
+                    <Outlet/>
+    
                 </div>
             </div>
         </div>

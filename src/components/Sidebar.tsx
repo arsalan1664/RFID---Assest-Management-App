@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +15,7 @@ export function Sidebar() {
                             Assets
                         </h2>
                         <div className="space-y-1">
-                            <Button variant="secondary" className="w-full justify-start">
+                            <Button variant="ghost"  className="w-full justify-start ">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -28,9 +29,9 @@ export function Sidebar() {
                                     <circle cx="12" cy="12" r="10" />
                                     <polygon points="10 8 16 12 10 16 10 8" />
                                 </svg>
-                                Assests
+                                <Link to={'/settings/assests_right'}>Assests</Link>
                             </Button>
-                            <Button variant="ghost" className="w-full justify-start">
+                            <Button variant="ghost" className="w-full justify-start active:bg-red-400">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -46,7 +47,8 @@ export function Sidebar() {
                                     <rect width="7" height="7" x="14" y="14" rx="1" />
                                     <rect width="7" height="7" x="3" y="14" rx="1" />
                                 </svg>
-                                Assests Types
+                                
+                                <Link to={'/settings/assests_right_2'}>Assests Types</Link>
                             </Button>
                             <Button variant="ghost" className="w-full justify-start">
                                 <svg

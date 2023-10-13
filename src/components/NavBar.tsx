@@ -24,7 +24,7 @@ function NavBar() {
                         </Button>
 
                         <Button variant={'outline'} className="hover:no-underline ">  
-                            <Link to={'/assests'}>Assests</Link>
+                            <Link to={'/settings'}>Assests</Link>
                         </Button>
                         <Assest />
                     </div>

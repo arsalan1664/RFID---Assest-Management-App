@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
-import { Github, Shell } from "lucide-react"
+import { Shell } from "lucide-react"
 import React from 'react'
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }

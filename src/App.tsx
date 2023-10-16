@@ -8,7 +8,7 @@ import {
   Routes
 } from "react-router-dom";
 import Assests_Right_2 from "./views/Settings/Assests_Right_2";
-import Assests_Right from "./views/Settings/Assests_Right";
+import CompanyInfo from "./views/Settings/CompanyInfo";
 import Auth from "./views/Auth";
 import NavBarOnOff from "./components/NavbarOnOff";
 import { UserLogin } from "./components/UserLogin";
@@ -30,7 +30,7 @@ function App() {
         </Route>
 
         <Route path="/settings" element={<Assests />}>
-          <Route path="assests_right" element={<Assests_Right />} />
+          <Route path="assests_right" element={<CompanyInfo />} />
           <Route path="assests_right_2" element={<Assests_Right_2 />} />
           {/* <Route path="/settings/assests_types_2" element={}/>
           <Route path="/settings/assests_types_3" element={}/>

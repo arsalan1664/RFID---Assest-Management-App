@@ -1,6 +1,4 @@
-import { DailogButton } from "@/components/DailogButton"
-import { DataTable } from "@/components/DataTable"
-import CompanyInfoForm from "./CompanyInfoForm";
+import {CompanyInfoForm} from "./CompanyInfoForm";
 
 
 function CompanyInfo() {
@@ -13,11 +11,8 @@ function CompanyInfo() {
             Here&apos;s Enter your company Information !
           </p>
         </div>
-        <div className="flex items-center space-x-2">
-          <DailogButton />
-        </div>
+
       </div>
-      {/* <DataTable /> */}
       <CompanyInfoForm/>
     </div >
   )

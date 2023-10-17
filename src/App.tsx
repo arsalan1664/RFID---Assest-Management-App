@@ -7,12 +7,15 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import Assests_Right_2 from "./views/Settings/Assests_Right_2";
 import CompanyInfo from "./views/Settings/CompanyInfo";
 import Auth from "./views/Auth";
 import NavBarOnOff from "./components/NavbarOnOff";
 import { UserLogin } from "./components/UserLogin";
 import { UserRegister } from "./components/UserRegisterv3";
+import SiteInfo from "./views/Settings/SiteInfo";
+import Location from "./views/Settings/Location";
+import Category from "./views/Settings/Category";
+import AssestsFields from "./views/Settings/AssestsFields";
 
 
 function App() {
@@ -30,12 +33,11 @@ function App() {
         </Route>
 
         <Route path="/settings" element={<Assests />}>
-          <Route path="assests_right" element={<CompanyInfo />} />
-          <Route path="assests_right_2" element={<Assests_Right_2 />} />
-          {/* <Route path="/settings/assests_types_2" element={}/>
-          <Route path="/settings/assests_types_3" element={}/>
-          <Route path="/settings/assests_types_4" element={}/>
-          <Route path="/settings/assests_types_5" element={}/> */}
+          <Route path="companyinfo" element={<CompanyInfo />} />
+          <Route path="siteinfo" element={<SiteInfo />} />
+          <Route path="location" element={<Location/>}/>
+          <Route path="categories" element={<Category/>}/>
+          <Route path="assestsfields" element={<AssestsFields/>}/>
         </Route>
 
       </Routes>

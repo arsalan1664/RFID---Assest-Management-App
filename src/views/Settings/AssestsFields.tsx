@@ -1,3 +1,4 @@
+import { AssestsFieldDataTable } from '@/components/AssestFieldDataTable'
 import { DailogButton } from '@/components/DailogButton'
 
 
@@ -15,6 +16,7 @@ function AssestsFields() {
           <DailogButton />
         </div>
       </div>
+      <AssestsFieldDataTable />
 
       
     </div >

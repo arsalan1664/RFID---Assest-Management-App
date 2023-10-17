@@ -27,51 +27,28 @@ import {
 const data: Payment[] = [
   {
     id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    Categoies: "al-fiza tower",
   },
-  {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
-  },
-  {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
-  },
+
 
 ]
 
 export type Payment = {
   id: string
-  name: string
-  address: string
-  city: string
+  Categoies: string
 }
 
 export const columns: ColumnDef<Payment>[] = [
 
   {
-    accessorKey: "name",
-    header: "Site Name",
+    accessorKey: "Categoies",
+    header: "Categoies",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize">{row.getValue("Categoies")}</div>
     ),
   },
-  {
-    accessorKey: "address",
-    header:'Address',
-    cell: ({ row }) => <div className="lowercase">{row.getValue("address")}</div>,
-  },
-  {
-    accessorKey: "city",
-    header: () => <div className="">City</div>,
-    cell: ({ row }) => <div className="lowercase">{row.getValue("city")}</div>
-  },
+
+
   {
     id: "actions",
     header: 'Action',
@@ -87,7 +64,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ]
 
-export function DataTable() {
+export function CategoiesDataTable() {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -119,13 +96,13 @@ export function DataTable() {
     <div className="w-full">
       {/* table */}
       <div className="rounded-md border">
-        <Table>
-          <TableHeader>
+        <Table >
+          <TableHeader >
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow  key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead  key={header.id}>
                       {header.isPlaceholder
                         ? null
                         : flexRender(

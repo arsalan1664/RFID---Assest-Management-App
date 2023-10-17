@@ -1,4 +1,5 @@
 import { DailogButton } from '@/components/DailogButton'
+import { LocationDataTable } from '@/components/LocationDataTable'
 
 function Location() {
   return (
@@ -14,6 +15,7 @@ function Location() {
           <DailogButton />
         </div>
       </div>
+        <LocationDataTable/>
 
       
     </div >

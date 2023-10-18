@@ -27,34 +27,51 @@ import {
 const data: Payment[] = [
   {
     id: "m5gr84i9",
-    location: "Room 5",
-    site: "Al-Fiza Tower",
+    name: "al-fiza tower",
+    address: "al-fiza tower near darus sehet hospital",
+    city: "karachi",
   },
-
+  {
+    id: "m5gr84i9",
+    name: "al-fiza tower",
+    address: "al-fiza tower near darus sehet hospital",
+    city: "karachi",
+  },
+  {
+    id: "m5gr84i9",
+    name: "al-fiza tower",
+    address: "al-fiza tower near darus sehet hospital",
+    city: "karachi",
+  },
 
 ]
 
 export type Payment = {
   id: string
-  location: string
-  site: string
+  name: string
+  address: string
+  city: string
 }
 
 export const columns: ColumnDef<Payment>[] = [
 
   {
-    accessorKey: "location",
-    header: "Location",
+    accessorKey: "name",
+    header: "Site Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("location")}</div>
+      <div className="capitalize">{row.getValue("name")}</div>
     ),
   },
   {
-    accessorKey: "site",
-    header:'Site',
-    cell: ({ row }) => <div className="capitalize">{row.getValue("site")}</div>,
+    accessorKey: "address",
+    header:'Address',
+    cell: ({ row }) => <div className="lowercase">{row.getValue("address")}</div>,
   },
-
+  {
+    accessorKey: "city",
+    header: () => <div className="">City</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("city")}</div>
+  },
   {
     id: "actions",
     header: 'Action',
@@ -70,7 +87,7 @@ export const columns: ColumnDef<Payment>[] = [
   },
 ]
 
-export function LocationDataTable() {
+export function AssestsViewDataTable() {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

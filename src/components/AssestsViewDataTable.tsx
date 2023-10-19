@@ -11,7 +11,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { Pencil, Trash2 } from "lucide-react"
+import { ChevronsRight, Pencil, Trash2 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
@@ -23,64 +23,106 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Link } from "react-router-dom"
 
-const data: Payment[] = [
+const data: TableDataType[] = [
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    id: 1,
+    asset: "Mobile",
+    site: "Al-fiza Tower Johar",
+    location: "room no 5",
+    category: "Electronics",
+    assign_to: "Arsalan",
   },
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    "id": 2,
+    "asset": "Laptop",
+    "site": "XYZ Tower",
+    "location": "Meeting Room 1",
+    "category": "Electronics",
+    "assign_to": "Bilal"
   },
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    "id": 3,
+    "asset": "Desktop Computer",
+    "site": "ABC Tower",
+    "location": "Cubicle 123",
+    "category": "Electronics",
+    "assign_to": "Ali"
   },
+  {
+    "id": 4,
+    "asset": "Printer",
+    "site": "PQR Tower",
+    "location": "Break Room",
+    "category": "Office Equipment",
+    "assign_to": "Zain"
+  },
+  {
+    "id": 5,
+    "asset": "Scanner",
+    "site": "RST Tower",
+    "location": "Storage Room",
+    "category": "Office Equipment",
+    "assign_to": "Umaima"
+  }
 
 ]
 
-export type Payment = {
-  id: string
-  name: string
-  address: string
-  city: string
+export type TableDataType = {
+  id: number
+  asset: string
+  site: string
+  location: string
+  category: string
+  assign_to: string
 }
 
-export const columns: ColumnDef<Payment>[] = [
+export const columns: ColumnDef<TableDataType>[] = [
 
   {
-    accessorKey: "name",
-    header: "Site Name",
+    accessorKey: "asset",
+    header: "Assest Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
+      <div className="capitalize">{row.getValue("asset")}</div>
     ),
   },
   {
-    accessorKey: "address",
-    header:'Address',
-    cell: ({ row }) => <div className="lowercase">{row.getValue("address")}</div>,
+    accessorKey: "category",
+    header: "Category",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("category")}</div>
   },
   {
-    accessorKey: "city",
-    header: () => <div className="">City</div>,
-    cell: ({ row }) => <div className="lowercase">{row.getValue("city")}</div>
+    accessorKey: "site",
+    header:'Site',
+    cell: ({ row }) => <div className="capitalize">{row.getValue("site")}</div>,
+  },
+  {
+    accessorKey: "location",
+    header:'Location',
+    cell: ({ row }) => <div className="capitalize">{row.getValue("location")}</div>,
+  },
+  {
+    accessorKey: "assign_to",
+    header: "Assign to",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("assign_to")}</div>
+    ),
   },
   {
     id: "actions",
-    header: 'Action',
+    header: ()=> <div className="">Action</div>,
     // enableHiding: false,
     cell: ({ row }) => {
       return (
-        <div>
+        <div className="">
           <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>
           <Button variant={"ghost"} size={"sm"}><Trash2 size={16} /></Button>
+          <Button variant={"ghost"} size={"sm"}>
+            <Link to={'/settings/assests/:Id'} className="flex">
+            <ChevronsRight size={20} />
+            </Link>
+          </Button>
         </div>
       )
     },
@@ -171,8 +213,8 @@ export function AssestsViewDataTable() {
       {/* pagination and row number */}
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          Total of{" "}
+          {table.getFilteredRowModel().rows.length} row(s).
         </div>
         <div className="space-x-2">
           <Button

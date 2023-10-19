@@ -1,23 +1,34 @@
-import { Card, CardDescription, CardHeader } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { SelectSeparator } from "@/components/ui/select";
+import { ChevronLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function AssestDiscription() {
+  const  navigate = useNavigate()
+  const handleNavigate = ( e:React.MouseEvent<HTMLButtonElement> )=>{
+    e.preventDefault()
+    navigate('/settings/assests')
+  }
   return(
 
 <>
 
-  <div className="text-forground body-font overflow-hidden bg-red-300 ">
-    <div className=" w-[70%] bg-red-200 px-4 py-12 mx-auto">
-      <div className="lg:w-4/5 mx-auto flex flex-wrap">
+  <div className="text-forground body-font overflow-hidden bg-background">
+    <div className="flex justify-end gap-3">
+      <Button variant={"secondary"} onClick={handleNavigate}><ChevronLeft size={20} />Back</Button>
+    </div>
+    <div className=" w-full px-2 py-12 mx-auto">
+
+      <div className="lg:w-[75%] mx-auto flex flex-wrap">
         <img
           alt="ecommerce"
           className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-          src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg"
+          src="/rahul-chakraborty-xsGxhtAsfSA-unsplash.jpg"
         />
         <div className="space-y-10 lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
 
-          <h1 className="text-3xl title-font font-medium mb-1">
-            The Catcher in the Rye
+          <h1 className="text-3xl title-font font-medium mb-1 space-y-4">
+            <h1> Mobile </h1>
           <SelectSeparator />
           </h1>
           <p className="leading-relaxed">

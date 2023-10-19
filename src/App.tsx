@@ -33,8 +33,12 @@ function App() {
 
         <Route path="/settings" element={<Assests />}>
 
-          <Route path="assests" element={<AssestsView />}/ >
-            {/* <Route path='assest'  /> */}
+          <Route path="assests" >
+            <Route path="" element={<AssestsView />} />
+            <Route path=":arrestId" element={<AssestDiscription/>} />
+          </Route>
+
+           
 
 
           <Route path="employee" element={<EmployeeView />} />
@@ -47,7 +51,7 @@ function App() {
         </Route>
       </Routes>
     </div>
-      <AssestDiscription/>
+      
       </>
   );
 }

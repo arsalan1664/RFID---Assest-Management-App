@@ -27,10 +27,16 @@ import {
 const data: Payment[] = [
   {
     id: "m5gr84i9",
-    Categoies: "al-fiza tower",
+    Categoies: "Computer",
   },
-
-
+  {
+    id: "m5gr8",
+    Categoies: "Office Equipment",
+  },
+  {
+    id: "m5gr8",
+    Categoies: "Util",
+  },
 ]
 
 export type Payment = {

@@ -84,10 +84,10 @@ export function Sidebar() {
 
                 <Link to={"/settings/categories"}>Categories</Link>
               </Button>
-              <Button variant="ghost" className="w-full justify-start">
+              {/* <Button variant="ghost" className="w-full justify-start">
                 <Boxes size={20} className="mr-2 h-4 w-4" />
                 <Link to={"/settings/assestsfields"}>Assests Fields</Link>
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>

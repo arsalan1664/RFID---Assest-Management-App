@@ -1,198 +1,70 @@
-import * as React from "react"
-import {
-  ColumnDef,
-  ColumnFiltersState,
-  SortingState,
-  VisibilityState,
-  flexRender,
-  getCoreRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from "@tanstack/react-table"
-import { Pencil, Trash2 } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
-const data: Payment[] = [
+const invoices = [
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    Id: 1,
+    Img: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80&w=1480&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Name: "Arsalan",
+    Assests_Assign: 5,
   },
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
+    Id: 2,
+    Img: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&q=80&w=1480&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Name: "Ali",
+    Assests_Assign: 6,
   },
   {
-    id: "m5gr84i9",
-    name: "al-fiza tower",
-    address: "al-fiza tower near darus sehet hospital",
-    city: "karachi",
-  },
-
-]
-
-export type Payment = {
-  id: string
-  name: string
-  address: string
-  city: string
-}
-
-export const columns: ColumnDef<Payment>[] = [
-
-  {
-    accessorKey: "name",
-    header: "Site Name",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("name")}</div>
-    ),
-  },
-  {
-    accessorKey: "address",
-    header:'Address',
-    cell: ({ row }) => <div className="lowercase">{row.getValue("address")}</div>,
-  },
-  {
-    accessorKey: "city",
-    header: () => <div className="">City</div>,
-    cell: ({ row }) => <div className="lowercase">{row.getValue("city")}</div>
-  },
-  {
-    id: "actions",
-    header: 'Action',
-    // enableHiding: false,
-    cell: ({ row }) => {
-      return (
-        <div>
-          <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>
-          <Button variant={"ghost"} size={"sm"}><Trash2 size={16} /></Button>
-        </div>
-      )
-    },
+    Id: 1,
+    Img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&q=80&w=1480&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Name: "Nabeel",
+    Assests_Assign: 3,
   },
 ]
 
-export function AssestsViewDataTable() {
-  const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = React.useState({})
-
-  const table = useReactTable({
-    data,
-    columns,
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
-    state: {
-      sorting,
-      columnFilters,
-      columnVisibility,
-      rowSelection,
-    },
-  })
-
+export function EmployeeViewDataTable() {
   return (
-    <div className="w-full">
-      {/* table */}
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
-                    </TableHead>
-                  )
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </div>
-      {/* pagination and row number */}
-      <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
-        <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Next
-          </Button>
-        </div>
-      </div>
-    </div>
-  )
+    <Table>
+      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Employee</TableHead>
+          <TableHead className="pl-8">Name</TableHead>
+          <TableHead className="text-center ">No of Assests Assign</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {invoices.map((invoice) => (
+          <>
+            <TableRow key={invoice.Id}>
+              <TableCell>
+                <Avatar className="h-9 w-9">
+                  <AvatarImage src={invoice.Img} alt="Avatar" />
+                  <AvatarFallback>Om</AvatarFallback>
+                </Avatar>
+              </TableCell>
+              <TableCell>
+                <div className="ml-4 space-y-1">
+                  <p className="text-sm font-medium leading-none truncate">
+                    {invoice.Name}
+                  </p>
+                </div>
+              </TableCell>
+              <TableCell className="text-center">
+                {invoice.Assests_Assign}
+              </TableCell>
+            </TableRow>
+          </>
+        ))}
+      </TableBody>
+    </Table>
+  );
 }

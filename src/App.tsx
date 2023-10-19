@@ -38,9 +38,6 @@ function App() {
             <Route path=":arrestId" element={<AssestDiscription/>} />
           </Route>
 
-           
-
-
           <Route path="employee" element={<EmployeeView />} />
 
           <Route path="companyinfo" element={<CompanyInfo />} />

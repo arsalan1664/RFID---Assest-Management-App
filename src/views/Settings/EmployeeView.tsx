@@ -1,5 +1,6 @@
 import { AssestsViewDataTable } from "@/components/AssestsViewDataTable"
 import { DailogButton } from "@/components/DailogButton"
+import { EmployeeViewDataTable } from "@/components/EmployeeDataTable"
 
 
 
@@ -17,7 +18,7 @@ function EmployeeView() {
           <DailogButton />
         </div>
       </div>
-      <AssestsViewDataTable />
+      <EmployeeViewDataTable />
     </div >
   )
 }

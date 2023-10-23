@@ -76,7 +76,7 @@ export const columns: ColumnDef<Payment>[] = [
     id: "actions",
     header: 'Action',
     // enableHiding: false,
-    cell: ({ row }) => {
+    cell: () => {
       return (
         <div>
           <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>

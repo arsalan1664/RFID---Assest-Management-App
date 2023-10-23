@@ -113,7 +113,7 @@ export const columns: ColumnDef<TableDataType>[] = [
     id: "actions",
     header: ()=> <div className="">Action</div>,
     // enableHiding: false,
-    cell: ({ row }) => {
+    cell: () => {
       return (
         <div className="">
           <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>

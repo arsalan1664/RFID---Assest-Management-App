@@ -2,8 +2,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { AlignJustify, Boxes, Codesandbox, Factory, Map, MapPin, Users2 } from "lucide-react";
-import { SelectSeparator } from "./ui/select";
-import { DropdownMenuSeparator } from "./ui/dropdown-menu";
+
 
 const SidebarNav = [
   {

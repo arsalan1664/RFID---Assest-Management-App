@@ -14,7 +14,7 @@ function Dashboard() {
                 <Tabs defaultValue="overview" className="space-y-4 p-8 pt-2">
                     <TabsList>
                     <TabsTrigger value="overview">Overview</TabsTrigger>
-                        <TabsTrigger value="recent" >
+                        <TabsTrigger value="recent" disabled >
                             Recent Activity
                         </TabsTrigger>
                         
@@ -81,7 +81,7 @@ function Dashboard() {
                             </Card>
                             <Card>
                                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                    <CardTitle className="text-sm font-medium">Net Value Assets</CardTitle>
+                                    <CardTitle className="text-sm font-medium">Total Categories</CardTitle>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
@@ -97,9 +97,9 @@ function Dashboard() {
                                     </svg>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="text-2xl font-bold">$12,234</div>
+                                    <div className="text-2xl font-bold">4</div>
                                     <p className="text-xs text-muted-foreground">
-                                        Total Assests Value
+                                    Total Categories
                                     </p>
                                 </CardContent>
                             </Card>
@@ -124,7 +124,7 @@ function Dashboard() {
                                     </svg>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="text-2xl font-bold">+573</div>
+                                    <div className="text-2xl font-bold">57</div>
                                     <p className="text-xs text-muted-foreground">
                                         No. of Employee
                                     </p>
@@ -134,7 +134,7 @@ function Dashboard() {
                         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                             <Card className="col-span-4">
                                 <CardHeader>
-                                    <CardTitle>Assests Value By Month</CardTitle>
+                                    <CardTitle>Assests By Categories</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pl-2">
                                     <Overview />
@@ -142,13 +142,14 @@ function Dashboard() {
                             </Card>
                             <Card className="col-span-3">
                                 <CardHeader>
-                                    <CardTitle>Assests By Status</CardTitle>
+                                    <CardTitle>Assests Assign to Employee</CardTitle>
                                     <CardDescription>
-                                        You made 265 sales this month.
+                                        {/* You made 265 sales this month. */}
                                     </CardDescription>
                                 </CardHeader>
-                                <CardContent className="flex items-center justify-center h-30 ">
-                                    <MyPieChart />
+                                <CardContent className=" ">
+                                    {/* <MyPieChart /> */}
+                                    <RecentSales />
                                 </CardContent>
                             </Card>
                         </div>

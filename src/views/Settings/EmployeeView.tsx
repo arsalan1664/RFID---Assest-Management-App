@@ -1,4 +1,4 @@
-simport { DailogButton } from "@/components/DailogButton"
+import { DailogButton } from "@/components/DailogButton"
 import { EmployeeViewDataTable } from "@/components/EmployeeDataTable"
 
 

@@ -1,41 +1,41 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { AlignJustify, Boxes, Codesandbox, Factory, Map, MapPin, Users2 } from "lucide-react";
+import { AlignJustify, Codesandbox, Factory, Map, MapPin, Users2 } from "lucide-react";
 
 
-const SidebarNav = [
-  {
-    id: 1,
-    title: "Comapany information",
-    icon: <Factory size={20} />,
-    link: "/setting/companyinfo",
-  },
-  {
-    id: 2,
-    title: "Site Information",
-    icon: <Map size={20} />,
-    link: "/setting/siteinfo",
-  },
-  {
-    id: 3,
-    title: "Location",
-    icon: <MapPin size={20} />,
-    link: "/setting/location",
-  },
-  {
-    id: 4,
-    title: "Catagories",
-    icon: <AlignJustify size={20} />,
-    link: "/setting/category",
-  },
-  {
-    id: 5,
-    title: "Assests Fields",
-    icon: <Boxes size={20} />,
-    link: "/setting/assestsfield",
-  },
-];
+// const SidebarNav = [
+//   {
+//     id: 1,
+//     title: "Comapany information",
+//     icon: <Factory size={20} />,
+//     link: "/setting/companyinfo",
+//   },
+//   {
+//     id: 2,
+//     title: "Site Information",
+//     icon: <Map size={20} />,
+//     link: "/setting/siteinfo",
+//   },
+//   {
+//     id: 3,
+//     title: "Location",
+//     icon: <MapPin size={20} />,
+//     link: "/setting/location",
+//   },
+//   {
+//     id: 4,
+//     title: "Catagories",
+//     icon: <AlignJustify size={20} />,
+//     link: "/setting/category",
+//   },
+//   {
+//     id: 5,
+//     title: "Assests Fields",
+//     icon: <Boxes size={20} />,
+//     link: "/setting/assestsfield",
+//   },
+// ];
 
 export function Sidebar() {
   return (

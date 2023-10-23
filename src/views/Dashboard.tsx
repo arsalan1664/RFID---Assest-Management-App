@@ -1,5 +1,5 @@
 import { Overview } from "@/components/Overview"
-import MyPieChart from "@/components/PieChart"
+// import MyPieChart from "@/components/PieChart"
 import { RecentSales } from "@/components/RecentSales"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"

@@ -1,6 +1,6 @@
 import { CategoiesDataTable } from '@/components/CategoriesDatatable'
 import { DailogButton } from '@/components/DailogButton'
-import React from 'react'
+
 
 function Category() {
   return (

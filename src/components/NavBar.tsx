@@ -7,7 +7,7 @@ import { Grip, Settings } from "lucide-react";
 
 function NavBar() {
   return (
-    <div className=" h-16   w-full  border-b">
+    <div className=" h-16   w-full  border-b bg-zinc-100">
       <div className="mx-16 my-1 flex items-center h-full w-['75%']">
         <div className="flex items-center justify-between w-full h-full">
           <div className="flex items-center justify-start w-full h-full">
@@ -28,7 +28,7 @@ function NavBar() {
               <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
             </svg>
             <h1 className="text-3xl  tracking-wide">RFID PAKISTAN</h1> */}
-            <img className="w-auto h-14" src="/public/RFID-72-Res-Logo-190x83.png"/>
+            <img className="w-auto h-14" src="/RFID-72-Res-Logo-190x83.png"/>
           </div>
 
           <div className="flex gap-2"></div>

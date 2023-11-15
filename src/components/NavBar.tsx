@@ -7,7 +7,7 @@ import { Grip, Settings } from "lucide-react";
 
 function NavBar() {
   return (
-    <div className=" h-16   w-full  border-b bg-zinc-100">
+    <div className=" h-16   w-full  border-b bg-slate-100 dark:bg-slate-950">
       <div className="mx-16 my-1 flex items-center h-full w-['75%']">
         <div className="flex items-center justify-between w-full h-full">
           <div className="flex items-center justify-start w-full h-full">

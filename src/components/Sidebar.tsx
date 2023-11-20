@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   AlignJustify,
@@ -17,6 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { buttonVariants } from "@/components/ui/button"
+
 
 const StocksProducts = [
   {
@@ -141,7 +143,7 @@ export function Sidebar() {
         <div className={cn("pb-12  ")}>
           <div className="space-y-4 py-4 h-[90vh]">
             {/* Assests and Employee*/}
-            <Accordion type="multiple"  className="w-full">
+            <Accordion type="multiple" className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>
                   <h2 className="relative px-7 text-md font-semibold tracking-tight">
@@ -151,11 +153,8 @@ export function Sidebar() {
                 <AccordionContent className="bg-slate-200 dark:bg-slate-900">
                   <div className="py-2">
                     <div className="space-y-1 p-2">
-                      <Button variant="ghost" className="w-full justify-start">
-                        <Codesandbox size={20} className="mr-2 h-4 w-4" />
-                        <Link to={"/settings/assests"}>Assests</Link>
-                      </Button>
-                      <Button variant="ghost" className="w-full justify-start">
+                      <NavLink to={"/settings/assests"} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}><Codesandbox size={20} className="mr-2 h-4 w-4" /> <h1>Assests</h1></NavLink>
+                      <Button variant="ghost" className="w-full justify-start ">
                         <Users2 size={20} className="mr-2 h-4 w-4" />
                         <Link to={"/settings/employee"}>Employee</Link>
                       </Button>

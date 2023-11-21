@@ -65,7 +65,7 @@ const Purchase = [
     id: "2",
     title: "Suppliers",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/suppliers",
   },
 ];
 

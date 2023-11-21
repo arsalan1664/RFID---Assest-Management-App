@@ -10,6 +10,52 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
+import * as React from "react"
+import { format } from "date-fns"
+import { Calendar as CalendarIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Textarea } from "./ui/textarea"
+
+
+
+function DatePicker() {
+  const [date, setDate] = React.useState<Date>()
+
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button
+          variant={"outline"}
+          className={cn(
+            "col-span-3 justify-start text-left font-normal",
+            !date && "text-muted-foreground"
+          )}
+        >
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? format(date, "PPP") : <span>Pick a date</span>}
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-auto p-0">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          initialFocus
+        />
+      </PopoverContent>
+    </Popover>
+  )
+}
+
+
 
 export function DailogButton() {
   return (
@@ -25,104 +71,123 @@ export function DailogButton() {
           </DialogDescription>
         </DialogHeader>
         <div className="grid grid-cols-2 gap-4 py-4">
-          {/* ###3 */}
+          {/* ### */}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
-              Asset Code
+              Asset name
             </Label>
             <Input
               id=""
               defaultValue=""
+              placeholder="Asset name"
               className="col-span-3"
             />
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Aseest Number
+            <Label htmlFor="Asset number" className="text-right">
+              Asset number
             </Label>
             <Input
-              id="username"
+              id="Asset number"
               defaultValue=""
+              placeholder="Asset number"
               className="col-span-3"
             />
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Assest Group
-            </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
-          </div>
-          {/* #### */}
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Branch
-            </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
-          </div>
-          {/* #### */}
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Department / Floor
-            </Label>
-            <Input
-              id="username"
-              defaultValue=""
-              className="col-span-3"
-            />
-          </div>
-          {/* #### */}
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Asset Description
-            </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
-          </div>
-          {/* #### */}
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
+            <Label htmlFor="Asset tag number" className="text-right">
               Asset tag number
             </Label>
             <Input
-              id=""
-              defaultValue=""
+              id="Asset tag number"
+              disabled
+              defaultValue="AST231112342"
               className="col-span-3"
             />
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Supplier" className="text-right">
+              Supplier
+            </Label>
+            <Select>
+              <SelectTrigger className="col-span-3">
+                <SelectValue placeholder="Select a supplier" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="apple">Supplier 1</SelectItem>
+                <SelectItem value="banana">Supplier 2</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Asset group" className="text-right">
+              Asset group
+            </Label>
+            <Select>
+              <SelectTrigger className="col-span-3">
+                <SelectValue placeholder="Select a group" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="apple">Group 1</SelectItem>
+                <SelectItem value="banana">Group 2</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Branch" className="text-right">
+              Branch
+            </Label>
+            <Select>
+              <SelectTrigger className="col-span-3">
+                <SelectValue placeholder="Select a branch" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="apple">branch 1</SelectItem>
+                <SelectItem value="banana">branch 2</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Department" className="text-right">
+              Department
+            </Label>
+            <Select>
+              <SelectTrigger className="col-span-3">
+                <SelectValue placeholder="Select a department" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="apple">Department 1</SelectItem>
+                <SelectItem value="banana">Department 2</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Floor" className="text-right">
+              Floor
+            </Label>
+            <Select>
+              <SelectTrigger className="col-span-3">
+                <SelectValue placeholder="Select a floor" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="apple">Floor 1</SelectItem>
+                <SelectItem value="banana">Floor 2</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
               Date of Acquisition
             </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
-          </div>
-          {/* #### */}
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Start Depreciation
-            </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
+            <DatePicker />
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
@@ -132,17 +197,31 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Asset Life in months"
               className="col-span-3"
             />
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
-              Salvage Value
+              Start depreciation
             </Label>
             <Input
               id=""
               defaultValue=""
+              placeholder="Start depreciation"
+              className="col-span-3"
+            />
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="Salvage value" className="text-right">
+              Salvage value
+            </Label>
+            <Input
+              id=""
+              defaultValue=""
+              placeholder="Salvage value"
               className="col-span-3"
             />
           </div>
@@ -154,6 +233,7 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Make"
               className="col-span-3"
             />
           </div>
@@ -165,6 +245,7 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Model"
               className="col-span-3"
             />
           </div>
@@ -176,6 +257,7 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Serial number"
               className="col-span-3"
             />
           </div>
@@ -187,6 +269,7 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Name of contractor/vendor"
               className="col-span-3"
             />
           </div>
@@ -198,6 +281,7 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Purchase order number"
               className="col-span-3"
             />
           </div>
@@ -209,19 +293,23 @@ export function DailogButton() {
             <Input
               id=""
               defaultValue=""
+              placeholder="Remarks"
               className="col-span-3"
             />
           </div>
           {/* #### */}
           <div className="grid grid-cols-4 items-center gap-4">
             <Label htmlFor="name" className="text-right">
+              Asset Description
+            </Label>
+            <Textarea placeholder="Type discription here." className="col-span-3" />
+          </div>
+          {/* #### */}
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
               Asset Picture
             </Label>
-            <Input
-              id=""
-              defaultValue=""
-              className="col-span-3"
-            />
+            <Input id="picture" type="file" className="col-span-3" />
           </div>
         </div>
         <DialogFooter>
@@ -231,6 +319,12 @@ export function DailogButton() {
     </Dialog>
   )
 }
+
+
+
+
+
+
 
 
 

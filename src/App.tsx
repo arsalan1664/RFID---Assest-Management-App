@@ -15,6 +15,7 @@ import AssestsFields from "./views/Settings/AssestsFields";
 import AssestsView from "./views/Settings/AssestsView";
 import EmployeeView from "./views/Settings/EmployeeView";
 import { AssestDiscription } from "./views/Settings/AssestDiscription";
+import { Suppliers } from "./views/Purchase/Suppliers";
 
 function App() {
   return (
@@ -32,20 +33,22 @@ function App() {
         </Route>
 
         <Route path="/settings" element={<Assests />}>
-
           <Route path="assests" >
             <Route path="" element={<AssestsView />} />
             <Route path=":arrestId" element={<AssestDiscription/>} />
           </Route>
-
           <Route path="employee" element={<EmployeeView />} />
-
           <Route path="companyinfo" element={<CompanyInfo />} />
           <Route path="siteinfo" element={<SiteInfo />} />
           <Route path="location" element={<Location />} />
           <Route path="categories" element={<Category />} />
           <Route path="assestsfields" element={<AssestsFields />} />
+
+          <Route path="suppliers" element={<Suppliers />}/>
         </Route>
+
+        
+
       </Routes>
     </div>
       

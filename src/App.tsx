@@ -9,13 +9,18 @@ import NavBarOnOff from "./components/NavbarOnOff";
 import { UserLogin } from "./components/UserLogin";
 import { UserRegister } from "./components/UserRegisterv3";
 import SiteInfo from "./views/Settings/SiteInfo";
-import Location from "./views/Settings/Location";
 import Category from "./views/Settings/Category";
 import AssestsFields from "./views/Settings/AssestsFields";
 import AssestsView from "./views/Settings/AssestsView";
 import EmployeeView from "./views/Settings/EmployeeView";
 import { AssestDiscription } from "./views/Settings/AssestDiscription";
 import { Suppliers } from "./views/Purchase/Suppliers";
+import { Countries } from "./views/Location/Countries";
+import { Countinent } from "./views/Location/Continents";
+import { States } from "./views/Location/States";
+import { Cities } from "./views/Location/Cities";
+import { Location } from "./views/Location/Location";
+import { Buildings } from "./views/Location/Buildings";
 
 function App() {
   return (
@@ -45,6 +50,13 @@ function App() {
           <Route path="assestsfields" element={<AssestsFields />} />
 
           <Route path="suppliers" element={<Suppliers />}/>
+          <Route path="continents" element={<Countinent />}/>
+          <Route path="countries" element={<Countries />}/>
+          <Route path="states" element={<States />}/>
+          <Route path="cities" element={<Cities />}/>
+          <Route path="location" element={<Location />}/>
+          <Route path="buildings" element={<Buildings />}/>
+          <Route path="floors" element={<Buildings />}/>
         </Route>
 
         

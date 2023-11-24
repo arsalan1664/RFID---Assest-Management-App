@@ -21,6 +21,8 @@ import { States } from "./views/Location/States";
 import { Cities } from "./views/Location/Cities";
 import { Location } from "./views/Location/Location";
 import { Buildings } from "./views/Location/Buildings";
+import { Floors } from "./views/Location/Floors";
+import { Rooms } from "./views/Location/Rooms";
 
 function App() {
   return (
@@ -56,7 +58,11 @@ function App() {
           <Route path="cities" element={<Cities />}/>
           <Route path="location" element={<Location />}/>
           <Route path="buildings" element={<Buildings />}/>
-          <Route path="floors" element={<Buildings />}/>
+          <Route path="floors" element={<Floors />}/>
+          <Route path="rooms" element={<Rooms />}/>
+
+          <Route path="rooms" element={<Rooms />}/>
+
         </Route>
 
         

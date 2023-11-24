@@ -130,11 +130,19 @@ const Warehouses = [
   },
   {
     id: "8",
-    title: "Warehouses",
+    title: "Rooms",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/rooms",
   },
 ];
+
+const setting = [
+  {
+    id: "1",
+    title: "Language",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/language",
+  },]
 
 export function Sidebar() {
   return (
@@ -287,8 +295,33 @@ export function Sidebar() {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-              {/* Setting */}
+              {/* Setting*/}
               <AccordionItem value="item-7">
+                <AccordionTrigger>
+                  <h2 className="relative px-7 text-md font-semibold tracking-tight">
+                    Setting
+                  </h2>
+                </AccordionTrigger>
+                <AccordionContent className="bg-slate-200 dark:bg-slate-900">
+                  <div className="py-2">
+                    <div className="space-y-1 p-2">
+                      {setting.map((i) => (
+                        <Button
+                          variant="ghost"
+                          className="w-full justify-start"
+                          key={i.id}
+                        >
+                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
+                          {i.icon}
+                          <Link to={i.link}>{i.title}</Link>
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              {/* Setting */}
+              {/* <AccordionItem value="item-8">
                 <AccordionTrigger>
                   <h2 className="relative px-7 text-md font-semibold tracking-tight">
                     Settings
@@ -316,7 +349,7 @@ export function Sidebar() {
                     </div>
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
         </div>

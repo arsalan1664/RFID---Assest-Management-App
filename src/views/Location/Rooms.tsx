@@ -12,42 +12,52 @@ import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
 import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
 
-const FloorsData = [
+const RoomsData = [
     {
         Id: 1,
-        Floor: "Karachi",
-        Building: "Pakistan",
+        Room: "3",
+        Floor: "4",
+        Device: "Moblie",
+        Antenna: "...",
     },
 ]
 
-function FloorsDataTable() {
+function RoomsDataTable() {
     return (
         <Table>
-            <TableCaption>A list of your recent FloorsData.</TableCaption>
+            <TableCaption>A list of your recent RoomsData.</TableCaption>
             <TableHeader className="bg-accent">
                 <TableRow>
                     <TableHead className="text-center">Id</TableHead>
+                    <TableHead className="text-center">Room</TableHead>
                     <TableHead className="text-center ">Floor</TableHead>
-                    <TableHead className="text-center">Building</TableHead>
+                    <TableHead className="text-center ">Device</TableHead>
+                    <TableHead className="text-center ">Antenna</TableHead>
                     <TableHead className="text-center ">Action</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {FloorsData.map((FloorsData) => (
+                {RoomsData.map((RoomsData) => (
                     <>
-                        <TableRow key={FloorsData.Id}>
+                        <TableRow key={RoomsData.Id}>
                             <TableCell className="text-center">
-                                {FloorsData.Id}
+                                {RoomsData.Id}
                             </TableCell>
                             <TableCell>
                                 <div className="ml-4 space-y-1">
                                     <p className="text-sm text-center font-medium leading-none truncate">
-                                        {FloorsData.Floor}
+                                        {RoomsData.Room}
                                     </p>
                                 </div>
                             </TableCell>
                             <TableCell className="text-center">
-                                {FloorsData.Building}
+                                {RoomsData.Floor}
+                            </TableCell>
+                            <TableCell className="text-center">
+                                {RoomsData.Device}
+                            </TableCell>
+                            <TableCell className="text-center">
+                                {RoomsData.Antenna}
                             </TableCell>
                             <TableCell className="text-center">
                                 <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>
@@ -65,21 +75,21 @@ function FloorsDataTable() {
 
 
 
-export function Floors() {
+export function Rooms() {
     return (
         < div className="hidden h-full flex-1 flex-col space-y-8 p-4 md:flex" >
             <div className="flex items-center justify-between space-y-2">
                 <div>
-                    <h2 className="text-2xl font-bold tracking-tight">Floors</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Rooms</h2>
                     <p className="text-muted-foreground">
-                        Here&apos;s a list of your Floors !
+                        Here&apos;s a list of your Rooms !
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
                     <DailogButtonSupplier />
                 </div>
             </div>
-            <FloorsDataTable />
+            <RoomsDataTable />
         </div >
     )
 }

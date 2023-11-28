@@ -142,6 +142,24 @@ const setting = [
     title: "Language",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
     link: "/settings/language",
+  },
+  {
+    id: "2",
+    title: "TimeZone",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/timezone",
+  },
+  {
+    id: "3",
+    title: "Companies",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/companies",
+  },
+  {
+    id: "4",
+    title: "Department",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/department",
   },]
 
 export function Sidebar() {

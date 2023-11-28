@@ -23,6 +23,10 @@ import { Location } from "./views/Location/Location";
 import { Buildings } from "./views/Location/Buildings";
 import { Floors } from "./views/Location/Floors";
 import { Rooms } from "./views/Location/Rooms";
+import { Language } from "./views/Setting/Language";
+import { TimeZone } from "./views/Setting/TimeZone";
+import { Department } from "./views/Setting/Department";
+import { Companies } from "./views/Setting/Companies";
 
 function App() {
   return (
@@ -61,7 +65,10 @@ function App() {
           <Route path="floors" element={<Floors />}/>
           <Route path="rooms" element={<Rooms />}/>
 
-          <Route path="rooms" element={<Rooms />}/>
+          <Route path="timezone" element={<TimeZone />}/>
+          <Route path="language" element={<Language />}/>
+          <Route path="companies" element={<Companies />}/>
+          <Route path="department" element={<Department />}/>
 
         </Route>
 

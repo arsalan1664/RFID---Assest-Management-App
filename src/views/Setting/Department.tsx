@@ -7,10 +7,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { DailogButton } from "@/components/DailogButton"
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const DepartmentData = [
     {
@@ -56,7 +57,40 @@ function DepartmentDataTable() {
     );
 }
 
-
+function Dailog_Button() {
+    return (
+        <Dialog >
+            <DialogTrigger asChild>
+                <Button variant="outline">Add Department</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[50%]">
+                <DialogHeader>
+                    <DialogTitle>Add Department</DialogTitle>
+                    <DialogDescription>
+                        Add the detail about your Department. Click save when you're done.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 gap-4 py-4">
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Asset Name" className="text-right">
+                            Department Name
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Department Name"
+                            className="col-span-3"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit">Save</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 
 export function Department() {
@@ -70,7 +104,7 @@ export function Department() {
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
-                    <DailogButtonSupplier />
+                    <Dailog_Button />
                 </div>
             </div>
             <DepartmentDataTable />

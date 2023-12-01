@@ -21,19 +21,19 @@ const StocksProducts = [
     id: "1",
     title: "Productx",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Categories",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "3",
     title: "Stocks/Inventory",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 const Sales = [
@@ -41,13 +41,13 @@ const Sales = [
     id: "1",
     title: "Sale Orders",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Customers",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 const Purchase = [
@@ -55,7 +55,7 @@ const Purchase = [
     id: "1",
     title: "Purchases",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
@@ -70,13 +70,13 @@ const Encoder = [
     id: "1",
     title: "Encoder",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Encoder Printer",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 
@@ -176,10 +176,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       <NavLink to={"/settings/assests"} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}><Codesandbox size={20} className="mr-2 h-4 w-4" /> <h1>Assests</h1></NavLink>
-                      <Button variant="ghost" className="w-full justify-start ">
-                        <Users2 size={20} className="mr-2 h-4 w-4" />
-                        <Link to={"/settings/employee"}>Employee</Link>
-                      </Button>
+                      <NavLink to={"/settings/employee"} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}><Users2 size={20} className="mr-2 h-4 w-4" /> <h1>Employee</h1></NavLink>
                     </div>
                   </div>
                 </AccordionContent>
@@ -195,15 +192,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {StocksProducts.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -220,15 +209,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Sales.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -245,15 +226,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Purchase.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -270,15 +243,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Encoder.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -295,15 +260,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Warehouses.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -320,15 +277,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {setting.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>

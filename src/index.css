@@ -81,5 +81,5 @@
 }
 
 .active{
-  @apply bg-secondary
+  @apply bg-sky-500
 }

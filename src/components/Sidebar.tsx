@@ -1,13 +1,8 @@
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
-import { Link, NavLink } from "react-router-dom";
+import {  NavLink } from "react-router-dom";
 
 import {
-  AlignJustify,
   Codesandbox,
-  Factory,
-  Map,
-  MapPin,
   Users2,
 } from "lucide-react";
 import { ScrollArea } from "./ui/scroll-area";
@@ -25,19 +20,19 @@ const StocksProducts = [
     id: "1",
     title: "Productx",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Categories",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "3",
     title: "Stocks/Inventory",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 const Sales = [
@@ -45,13 +40,13 @@ const Sales = [
     id: "1",
     title: "Sale Orders",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Customers",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 const Purchase = [
@@ -59,13 +54,13 @@ const Purchase = [
     id: "1",
     title: "Purchases",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Suppliers",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/suppliers",
   },
 ];
 
@@ -74,13 +69,13 @@ const Encoder = [
     id: "1",
     title: "Encoder",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
   {
     id: "2",
     title: "Encoder Printer",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/",
   },
 ];
 
@@ -89,52 +84,78 @@ const Warehouses = [
     id: "1",
     title: "Continents",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/continents",
   },
   {
     id: "2",
     title: "Countires",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/countries",
   },
 
   {
     id: "3",
     title: "State",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/states",
   },
   {
     id: "4",
     title: "Cities",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/cities",
   },
   {
     id: "5",
     title: "Location",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/location",
   },
   {
     id: "6",
     title: "Building",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/buildings",
   },
   {
     id: "7",
     title: "Floor",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/floors",
   },
   {
     id: "8",
-    title: "Warehouses",
+    title: "Rooms",
     icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
-    link: "/settings/assests",
+    link: "/settings/rooms",
   },
 ];
+
+const setting = [
+  {
+    id: "1",
+    title: "Language",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/language",
+  },
+  {
+    id: "2",
+    title: "TimeZone",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/timezone",
+  },
+  {
+    id: "3",
+    title: "Companies",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/companies",
+  },
+  {
+    id: "4",
+    title: "Department",
+    icon: <Codesandbox size={20} className="mr-2 h-4 w-4" />,
+    link: "/settings/department",
+  },]
 
 export function Sidebar() {
   return (
@@ -154,10 +175,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       <NavLink to={"/settings/assests"} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}><Codesandbox size={20} className="mr-2 h-4 w-4" /> <h1>Assests</h1></NavLink>
-                      <Button variant="ghost" className="w-full justify-start ">
-                        <Users2 size={20} className="mr-2 h-4 w-4" />
-                        <Link to={"/settings/employee"}>Employee</Link>
-                      </Button>
+                      <NavLink to={"/settings/employee"} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}><Users2 size={20} className="mr-2 h-4 w-4" /> <h1>Employee</h1></NavLink>
                     </div>
                   </div>
                 </AccordionContent>
@@ -173,15 +191,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {StocksProducts.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -198,15 +208,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Sales.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -223,15 +225,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Purchase.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -248,15 +242,7 @@ export function Sidebar() {
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Encoder.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
@@ -266,29 +252,38 @@ export function Sidebar() {
               <AccordionItem value="item-6">
                 <AccordionTrigger>
                   <h2 className="relative px-7 text-md font-semibold tracking-tight">
-                    Warehouses
+                    Location
                   </h2>
                 </AccordionTrigger>
                 <AccordionContent className="bg-slate-200 dark:bg-slate-900">
                   <div className="py-2">
                     <div className="space-y-1 p-2">
                       {Warehouses.map((i) => (
-                        <Button
-                          variant="ghost"
-                          className="w-full justify-start"
-                          key={i.id}
-                        >
-                          {/* <Codesandbox size={20} className="mr-2 h-4 w-4" /> */}
-                          {i.icon}
-                          <Link to={i.link}>{i.title}</Link>
-                        </Button>
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
+                      ))}
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              {/* Setting*/}
+              <AccordionItem value="item-7">
+                <AccordionTrigger>
+                  <h2 className="relative px-7 text-md font-semibold tracking-tight">
+                    Setting
+                  </h2>
+                </AccordionTrigger>
+                <AccordionContent className="bg-slate-200 dark:bg-slate-900">
+                  <div className="py-2">
+                    <div className="space-y-1 p-2">
+                      {setting.map((i) => (
+                        <NavLink key={i.id} to={i.link} className={`nav-link ${buttonVariants({ variant: "ghost" })}`}>{i.icon} <h1>{i.title}</h1></NavLink>
                       ))}
                     </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
               {/* Setting */}
-              <AccordionItem value="item-7">
+              {/* <AccordionItem value="item-8">
                 <AccordionTrigger>
                   <h2 className="relative px-7 text-md font-semibold tracking-tight">
                     Settings
@@ -316,7 +311,7 @@ export function Sidebar() {
                     </div>
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
         </div>

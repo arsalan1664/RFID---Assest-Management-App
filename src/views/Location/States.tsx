@@ -7,10 +7,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { DailogButton } from "@/components/DailogButton"
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const StatesData = [
     {
@@ -28,9 +29,9 @@ function StatesDataTable() {
             <TableHeader className="bg-accent">
                 <TableRow>
                     <TableHead className="text-center">Id</TableHead>
-                    <TableHead className="text-center ">Countries</TableHead>
+                    <TableHead className="text-center ">State </TableHead>
                     <TableHead className="text-center ">Time Zone</TableHead>
-                    <TableHead className="text-center ">Name</TableHead>
+                    <TableHead className="text-center ">Countries</TableHead>
                     <TableHead className="text-center ">Action</TableHead>
                 </TableRow>
             </TableHeader>
@@ -42,17 +43,17 @@ function StatesDataTable() {
                                 {StatesData.Id}
                             </TableCell>
                             <TableCell>
-                                <div className="ml-4 space-y-1">
+                                <div className="text-center space-y-1">
                                     <p className="text-sm font-medium leading-none truncate">
-                                        {StatesData.Countries}
+                                        {StatesData.Name}
                                     </p>
                                 </div>
                             </TableCell>
                             <TableCell className="text-center">
-                                {StatesData.Name}
+                                {StatesData.Time_Zone}
                             </TableCell>
                             <TableCell className="text-center">
-                                {StatesData.Time_Zone}
+                                {StatesData.Countries}
                             </TableCell>
                             <TableCell className="text-center">
                                 <Button variant={"ghost"} size={"sm"}><Pencil size={16} /></Button>
@@ -67,7 +68,64 @@ function StatesDataTable() {
     );
 }
 
-
+function Dailog_Button() {
+    return (
+        <Dialog >
+            <DialogTrigger asChild>
+                <Button variant="outline">Add State</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[50%]">
+                <DialogHeader>
+                    <DialogTitle>Add State</DialogTitle>
+                    <DialogDescription>
+                        Add the detail about your State. Click save when you're done.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 gap-4 py-4">
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="State" className="text-right">
+                            State
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="State"
+                            className="col-span-3"
+                        />
+                    </div>
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="TimeZone" className="text-right">
+                            TimeZone
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="TimeZone"
+                            className="col-span-3"
+                        />
+                    </div>
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Country Name" className="text-right">
+                            Country Name
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Country Name"
+                            className="col-span-3"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit">Save</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 
 export function States() {
@@ -81,7 +139,7 @@ export function States() {
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
-                    <DailogButtonSupplier />
+                    <Dailog_Button />
                 </div>
             </div>
             <StatesDataTable />

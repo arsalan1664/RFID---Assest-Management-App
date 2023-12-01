@@ -7,10 +7,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { DailogButton } from "@/components/DailogButton"
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { DialogHeader, DialogFooter, Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const CountinentsData = [
     {
@@ -57,7 +58,40 @@ function CountinentsDataTable() {
     );
 }
 
-
+function Dailog_Button() {
+    return (
+        <Dialog >
+            <DialogTrigger asChild>
+                <Button variant="outline">Add Continent</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[50%]">
+                <DialogHeader>
+                    <DialogTitle>Add Continent</DialogTitle>
+                    <DialogDescription>
+                        Add the detail about your asset. Click save when you're done.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 gap-4 py-4">
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Continent Name" className="text-right">
+                            Continent Name
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Continent Name"
+                            className="col-span-3"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit">Save</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 
 export function Countinent() {
@@ -65,13 +99,13 @@ export function Countinent() {
         < div className="hidden h-full flex-1 flex-col space-y-8 p-4 md:flex" >
             <div className="flex items-center justify-between space-y-2">
                 <div>
-                    <h2 className="text-2xl font-bold tracking-tight">Countinents</h2>
+                    <h2 className="text-2xl font-bold tracking-tight">Continents</h2>
                     <p className="text-muted-foreground">
-                        Here&apos;s a list of your Countinents !
+                        Here&apos;s a list of your Continents !
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
-                    <DailogButtonSupplier />
+                    <Dailog_Button />
                 </div>
             </div>
             <CountinentsDataTable />

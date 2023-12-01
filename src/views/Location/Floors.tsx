@@ -7,10 +7,11 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { DailogButton } from "@/components/DailogButton"
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 const FloorsData = [
     {
@@ -63,7 +64,52 @@ function FloorsDataTable() {
 }
 
 
-
+function Dailog_Button() {
+    return (
+        <Dialog >
+            <DialogTrigger asChild>
+                <Button variant="outline">Add Floor</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[50%]">
+                <DialogHeader>
+                    <DialogTitle>Add Floor</DialogTitle>
+                    <DialogDescription>
+                        Add the detail about your Floor. Click save when you're done.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 gap-4 py-4">
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Floor" className="text-right">
+                            Floor
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Floor"
+                            className="col-span-3"
+                        />
+                    </div>
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Building" className="text-right">
+                            Building
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Building"
+                            className="col-span-3"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit">Save</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 export function Floors() {
     return (
@@ -76,7 +122,7 @@ export function Floors() {
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
-                    <DailogButtonSupplier />
+                    <Dailog_Button />
                 </div>
             </div>
             <FloorsDataTable />

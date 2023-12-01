@@ -3,11 +3,7 @@ import { Button } from "./ui/button";
 import { Link, NavLink } from "react-router-dom";
 
 import {
-  AlignJustify,
   Codesandbox,
-  Factory,
-  Map,
-  MapPin,
   Users2,
 } from "lucide-react";
 import { ScrollArea } from "./ui/scroll-area";
@@ -292,7 +288,7 @@ export function Sidebar() {
               <AccordionItem value="item-6">
                 <AccordionTrigger>
                   <h2 className="relative px-7 text-md font-semibold tracking-tight">
-                    Warehouses
+                    Location
                   </h2>
                 </AccordionTrigger>
                 <AccordionContent className="bg-slate-200 dark:bg-slate-900">

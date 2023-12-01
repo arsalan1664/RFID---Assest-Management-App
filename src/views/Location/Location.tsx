@@ -7,15 +7,16 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { DailogButton } from "@/components/DailogButton"
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { Label } from "@/components/ui/label";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 
 const LocationData = [
     {
         Id: 1,
-        Countries: "Pakistan",
+        Countries: "Al-fiza Tower",
         Time_Zone: "GMT +5",
         Name: "Karachi",
     },
@@ -30,6 +31,7 @@ function LocationDataTable() {
                     <TableHead className="text-center">Id</TableHead>
                     <TableHead className="text-center ">Location</TableHead>
                     <TableHead className="text-center ">City</TableHead>
+                    <TableHead className="text-center ">Time Zone</TableHead>
                     <TableHead className="text-center ">Action</TableHead>
                 </TableRow>
             </TableHeader>
@@ -41,7 +43,7 @@ function LocationDataTable() {
                                 {LocationData.Id}
                             </TableCell>
                             <TableCell>
-                                <div className="ml-4 space-y-1">
+                                <div className="text-center space-y-1">
                                     <p className="text-sm font-medium leading-none truncate">
                                         {LocationData.Countries}
                                     </p>
@@ -67,7 +69,64 @@ function LocationDataTable() {
 }
 
 
-
+function Dailog_Button() {
+    return (
+        <Dialog >
+            <DialogTrigger asChild>
+                <Button variant="outline">Add Location</Button>
+            </DialogTrigger>
+            <DialogContent className="sm:max-w-[50%]">
+                <DialogHeader>
+                    <DialogTitle>Add Location</DialogTitle>
+                    <DialogDescription>
+                        Add the detail about your Location. Click save when you're done.
+                    </DialogDescription>
+                </DialogHeader>
+                <div className="grid grid-cols-1 gap-4 py-4">
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Location" className="text-right">
+                            Location
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Location"
+                            className="col-span-3"
+                        />
+                    </div>
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Countries" className="text-right">
+                            Countries
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Countries"
+                            className="col-span-3"
+                        />
+                    </div>
+                    {/* ### */}
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="Time Zone" className="text-right">
+                            Time Zone
+                        </Label>
+                        <Input
+                            id=""
+                            defaultValue=""
+                            placeholder="Time Zone"
+                            className="col-span-3"
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button type="submit">Save</Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    )
+}
 
 export function Location() {
     return (
@@ -80,7 +139,7 @@ export function Location() {
                     </p>
                 </div>
                 <div className="flex items-center space-x-2 ">
-                    <DailogButtonSupplier />
+                    <Dailog_Button />
                 </div>
             </div>
             <LocationDataTable />

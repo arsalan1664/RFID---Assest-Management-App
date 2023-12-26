@@ -83,3 +83,7 @@
 .active{
   @apply bg-sky-500
 }
+
+.active2{
+  @apply hover:border
+}

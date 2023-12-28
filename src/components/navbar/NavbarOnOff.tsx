@@ -6,7 +6,6 @@ function NavBarOnOff({ children }: { children: React.ReactNode }) {
   const location = useLocation()
   const [showNav, setShowNav] = useState(false)
   useEffect(() => {
-    console.log('loaction is ', location)
     if (location.pathname === '/auth/register' || location.pathname === '/auth/login') {
       setShowNav(false)
     } else {

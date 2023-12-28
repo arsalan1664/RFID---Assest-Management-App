@@ -1,9 +1,8 @@
-import { UserAvatar } from "./Avatar";
 import { Link } from "react-router-dom";
-
-import { ThemMode } from "./ThemeToggle";
-import { buttonVariants } from "./ui/button";
 import { Grip, Settings } from "lucide-react";
+import { ThemMode } from "./ThemeToggle";
+import { UserAvatar } from "./Avatar";
+import { buttonVariants } from "../ui/button";
 
 function NavBar() {
   return (

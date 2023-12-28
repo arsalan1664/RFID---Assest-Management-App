@@ -1,7 +1,7 @@
-import { Sidebar } from "@/components/Sidebar"
 // import { DataTable } from "@/components/DataTable"
 // import { DailogButton } from "@/components/DailogButton"
 import { Outlet } from "react-router-dom"
+import { Sidebar } from "./Sidebar"
 
 function Assests() {
     return (

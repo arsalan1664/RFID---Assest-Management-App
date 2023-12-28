@@ -1,8 +1,8 @@
-import { Overview } from "@/components/Overview"
+import { Overview } from "@/components/dashboard/Overview"
 // import MyPieChart from "@/components/PieChart"
-import { RecentSales } from "@/components/RecentSales"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { RecentSales } from "./RecentSales"
 
 function Dashboard() {
     return (

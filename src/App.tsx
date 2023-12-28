@@ -1,77 +1,81 @@
 // import MyPieChart from "./components/PieChart"
-import NavBar from "./components/NavBar";
-import Assests from "./views/Assests";
-import Dashboard from "./views/Dashboard";
+
+import Assests from "./components/views/Assests";
+import Dashboard from "./components/dashboard/Dashboard";
 import { Route, Routes } from "react-router-dom";
-import CompanyInfo from "./views/Settings/CompanyInfo";
-import Auth from "./views/Auth";
-import NavBarOnOff from "./components/NavbarOnOff";
-import { UserLogin } from "./components/UserLogin";
-import { UserRegister } from "./components/UserRegisterv3";
-import SiteInfo from "./views/Settings/SiteInfo";
-import Category from "./views/Settings/Category";
-import AssestsFields from "./views/Settings/AssestsFields";
-import AssestsView from "./views/Settings/AssestsView";
-import EmployeeView from "./views/Settings/EmployeeView";
-import { AssestDiscription } from "./views/Settings/AssestDiscription";
-import { Suppliers } from "./views/Purchase/Suppliers";
-import { Countries } from "./views/Location/Countries";
-import { Countinent } from "./views/Location/Continents";
-import { States } from "./views/Location/States";
-import { Cities } from "./views/Location/Cities";
-import { Location } from "./views/Location/Location";
-import { Buildings } from "./views/Location/Buildings";
-import { Floors } from "./views/Location/Floors";
-import { Rooms } from "./views/Location/Rooms";
-import { Language } from "./views/Setting/Language";
-import { TimeZone } from "./views/Setting/TimeZone";
-import { Department } from "./views/Setting/Department";
-import { Companies } from "./views/Setting/Companies";
+import CompanyInfo from "./components/views/Settings/CompanyInfo";
+import Auth from "./components/auth/Auth";
+import NavBarOnOff from "./components/navbar/NavbarOnOff";
+import { UserLogin } from "./components/auth/UserLogin";
+import { UserRegister } from "./components/auth/UserRegisterv3";
+import SiteInfo from "./components/views/Settings/SiteInfo";
+import Category from "./components/views/Settings/Category";
+import AssestsFields from "./components/views/Settings/AssestsFields";
+import AssestsView from "./components/views/Settings/AssestsView";
+import EmployeeView from "./components/views/Settings/EmployeeView";
+import { AssestDiscription } from "./components/views/Settings/AssestDiscription";
+import { Suppliers } from "./components/views/Purchase/Suppliers";
+import { Countries } from "./components/views/Location/Countries";
+import { Countinent } from "./components/views/Location/Continents";
+import { States } from "./components/views/Location/States";
+import { Cities } from "./components/views/Location/Cities";
+import { Location } from "./components/views/Location/Location";
+import { Buildings } from "./components/views/Location/Buildings";
+import { Floors } from "./components/views/Location/Floors";
+import { Rooms } from "./components/views/Location/Rooms";
+import { Language } from "./components/views/Setting/Language";
+import { TimeZone } from "./components/views/Setting/TimeZone";
+import { Department } from "./components/views/Setting/Department";
+import { Companies } from "./components/views/Setting/Companies";
+import UserProtection from "./components/protected-routes/UserProtection";
+import NonUserProtect from "./components/protected-routes/NonUserProtection";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
   return (
     <>
-    <div className="">
+    <div>
       <NavBarOnOff>
         <NavBar />
       </NavBarOnOff>
 
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<NonUserProtect>  <Dashboard />  </NonUserProtect>} />
         <Route path="/auth" element={<Auth />}>
-          <Route path="login" element={<UserLogin />} />
-          <Route path="register" element={<UserRegister />} />
+          <Route path="login" element={<UserProtection>  <UserLogin />  </UserProtection>} />
+          <Route path="register" element={<UserProtection>  <UserRegister />  </UserProtection>} />
         </Route>
 
-        <Route path="/settings" element={<Assests />}>
+
+        <Route path="/settings" element={<NonUserProtect>  <Assests />  </NonUserProtect>}>
           <Route path="assests" >
-            <Route path="" element={<AssestsView />} />
-            <Route path=":arrestId" element={<AssestDiscription/>} />
+            <Route path="" element={<NonUserProtect>  <AssestsView />  </NonUserProtect>} />
+            <Route path=":arrestId" element={<NonUserProtect> <AssestDiscription/>  </NonUserProtect>}  />
           </Route>
-          <Route path="employee" element={<EmployeeView />} />
-          <Route path="companyinfo" element={<CompanyInfo />} />
-          <Route path="siteinfo" element={<SiteInfo />} />
-          <Route path="location" element={<Location />} />
-          <Route path="categories" element={<Category />} />
-          <Route path="assestsfields" element={<AssestsFields />} />
+          <Route path="employee" element={<NonUserProtect>  <EmployeeView />  </NonUserProtect>} />
+          <Route path="companyinfo" element={ <NonUserProtect>  <CompanyInfo />  </NonUserProtect>} />
+          <Route path="siteinfo" element={<NonUserProtect>  <SiteInfo />  </NonUserProtect>} />
+          <Route path="location" element={ <NonUserProtect>  <Location />  </NonUserProtect>} />
+          <Route path="categories" element={<NonUserProtect>  <Category />  </NonUserProtect>} />
+          <Route path="assestsfields" element={<NonUserProtect>  <AssestsFields />  </NonUserProtect>} />
 
-          <Route path="suppliers" element={<Suppliers />}/>
-          <Route path="continents" element={<Countinent />}/>
-          <Route path="countries" element={<Countries />}/>
-          <Route path="states" element={<States />}/>
-          <Route path="cities" element={<Cities />}/>
-          <Route path="location" element={<Location />}/>
-          <Route path="buildings" element={<Buildings />}/>
-          <Route path="floors" element={<Floors />}/>
-          <Route path="rooms" element={<Rooms />}/>
+          <Route path="suppliers" element={<NonUserProtect>  <Suppliers />  </NonUserProtect>}/>
+          <Route path="continents" element={<NonUserProtect> <Countinent /> </NonUserProtect>}/>
+          <Route path="countries" element={<NonUserProtect> <Countries /> </NonUserProtect>}/>
+          <Route path="states" element={<NonUserProtect> <States /> </NonUserProtect>}/>
+          <Route path="cities" element={<NonUserProtect> <Cities /> </NonUserProtect>}/>
+          <Route path="location" element={<NonUserProtect> <Location /> </NonUserProtect>}/>
+          <Route path="buildings" element={<NonUserProtect> <Buildings /> </NonUserProtect>}/>
+          <Route path="floors" element={<NonUserProtect>  <Floors />  </NonUserProtect>}/>
+          <Route path="rooms" element={<NonUserProtect>  <Rooms />  </NonUserProtect>}/>
 
-          <Route path="timezone" element={<TimeZone />}/>
-          <Route path="language" element={<Language />}/>
-          <Route path="companies" element={<Companies />}/>
-          <Route path="department" element={<Department />}/>
+          <Route path="timezone" element={<NonUserProtect>  <TimeZone />  </NonUserProtect>}/>
+          <Route path="language" element={<NonUserProtect>  <Language />  </NonUserProtect>}/>
+          <Route path="companies" element={<NonUserProtect> <Companies />  </NonUserProtect>}/>
+          <Route path="department" element={<NonUserProtect>  <Department />  </NonUserProtect>}/>
 
         </Route>
-
+ 
         
 
       </Routes>

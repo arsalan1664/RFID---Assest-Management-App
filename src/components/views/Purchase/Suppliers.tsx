@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Pencil, Trash2 } from "lucide-react";
-import { DailogButtonSupplier } from "@/components/DailogButtonSupplier";
+import { DailogButtonSupplier } from "@/components/views/Purchase/DailogButtonSupplier";
 
 const SuppliersData = [
     {

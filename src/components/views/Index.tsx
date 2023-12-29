@@ -3,7 +3,7 @@
 import { Outlet } from "react-router-dom"
 import { Sidebar } from "./Sidebar"
 
-function Assests() {
+function Index() {
     return (
         <div className="grid lg:grid-cols-6">
             <Sidebar />
@@ -16,4 +16,4 @@ function Assests() {
     )
 }
 
-export default Assests
+export default Index

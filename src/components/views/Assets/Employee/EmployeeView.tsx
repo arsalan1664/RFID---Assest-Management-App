@@ -1,5 +1,5 @@
-import { DailogButton } from "@/components/DailogButton"
-import { EmployeeViewDataTable } from "@/components/EmployeeDataTable"
+import { EmployeeViewDataTable } from "@/components/views/Assets/Employee/EmployeeDataTable"
+import { DailogButton } from "../Assets/DailogButton"
 
 
 

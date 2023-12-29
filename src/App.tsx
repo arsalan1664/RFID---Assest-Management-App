@@ -1,18 +1,18 @@
 // import MyPieChart from "./components/PieChart"
 
-import Assests from "./components/views/Assests";
+import Assests from "./components/views/Index";
 import Dashboard from "./components/dashboard/Dashboard";
 import { Route, Routes } from "react-router-dom";
-import CompanyInfo from "./components/views/Settings/CompanyInfo";
+import CompanyInfo from "./components/views/Faltu/CompanyInfo";
 import NavBarOnOff from "./components/navbar/NavbarOnOff";
 import { UserLogin } from "./components/auth/UserLogin";
 import { UserRegister } from "./components/auth/UserRegisterv3";
-import SiteInfo from "./components/views/Settings/SiteInfo";
-import Category from "./components/views/Settings/Category";
-import AssestsFields from "./components/views/Settings/AssestsFields";
-import AssestsView from "./components/views/Settings/AssestsView";
-import EmployeeView from "./components/views/Settings/EmployeeView";
-import { AssestDiscription } from "./components/views/Settings/AssestDiscription";
+import SiteInfo from "./components/views/Faltu/SiteInfo";
+import Category from "./components/views/Faltu/Category";
+import AssestsFields from "./components/views/Faltu/AssestsFields";
+import AssestsView from "./components/views/Faltu/AssestsView";
+import EmployeeView from "./components/views/Assets/Employee/EmployeeView";
+import { AssestDiscription } from "./components/views/Assets/Assets/AssestDiscription";
 import { Suppliers } from "./components/views/Purchase/Suppliers";
 import { Countries } from "./components/views/Location/Countries";
 import { Countinent } from "./components/views/Location/Continents";
@@ -49,17 +49,22 @@ function App() {
 
 
           <Route path="/settings" element={<NonUserProtect>  <Assests />  </NonUserProtect>}>
+            {/* asset */}
             <Route path="assests" >
               <Route path="" element={<NonUserProtect>  <AssestsView />  </NonUserProtect>} />
               <Route path=":arrestId" element={<NonUserProtect> <AssestDiscription />  </NonUserProtect>} />
             </Route>
             <Route path="employee" element={<NonUserProtect>  <EmployeeView />  </NonUserProtect>} />
-            <Route path="companyinfo" element={<NonUserProtect>  <CompanyInfo />  </NonUserProtect>} />
+
+
+            {/* <Route path="companyinfo" element={<NonUserProtect>  <CompanyInfo />  </NonUserProtect>} />
             <Route path="siteinfo" element={<NonUserProtect>  <SiteInfo />  </NonUserProtect>} />
             <Route path="location" element={<NonUserProtect>  <Location />  </NonUserProtect>} />
             <Route path="categories" element={<NonUserProtect>  <Category />  </NonUserProtect>} />
-            <Route path="assestsfields" element={<NonUserProtect>  <AssestsFields />  </NonUserProtect>} />
+            <Route path="assestsfields" element={<NonUserProtect>  <AssestsFields />  </NonUserProtect>} /> */}
 
+
+            {/* location */}
             <Route path="suppliers" element={<NonUserProtect>  <Suppliers />  </NonUserProtect>} />
             <Route path="continents" element={<NonUserProtect> <Countinent /> </NonUserProtect>} />
             <Route path="countries" element={<NonUserProtect> <Countries /> </NonUserProtect>} />
@@ -69,7 +74,8 @@ function App() {
             <Route path="buildings" element={<NonUserProtect> <Buildings /> </NonUserProtect>} />
             <Route path="floors" element={<NonUserProtect>  <Floors />  </NonUserProtect>} />
             <Route path="rooms" element={<NonUserProtect>  <Rooms />  </NonUserProtect>} />
-
+            
+            {/* Settings */}
             <Route path="timezone" element={<NonUserProtect>  <TimeZone />  </NonUserProtect>} />
             <Route path="language" element={<NonUserProtect>  <Language />  </NonUserProtect>} />
             <Route path="companies" element={<NonUserProtect> <Companies />  </NonUserProtect>} />

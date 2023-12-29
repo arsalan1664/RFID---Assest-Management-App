@@ -12,7 +12,7 @@ function NonUserProtect({ children }: NonUserProtectProps) {
 
   useEffect(() => {
     if (!user) {
-      navigate("/auth/login");
+      navigate("/login");
     }
   }, [user, navigate]);
 

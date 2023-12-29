@@ -4,7 +4,6 @@ import Assests from "./components/views/Assests";
 import Dashboard from "./components/dashboard/Dashboard";
 import { Route, Routes } from "react-router-dom";
 import CompanyInfo from "./components/views/Settings/CompanyInfo";
-import Auth from "./components/auth/Auth";
 import NavBarOnOff from "./components/navbar/NavbarOnOff";
 import { UserLogin } from "./components/auth/UserLogin";
 import { UserRegister } from "./components/auth/UserRegisterv3";
@@ -34,54 +33,53 @@ import NavBar from "./components/navbar/NavBar";
 function App() {
   return (
     <>
-    <div>
-      <NavBarOnOff>
-        <NavBar />
-      </NavBarOnOff>
+      <div>
+        <NavBarOnOff>
+          <NavBar />
+        </NavBarOnOff>
 
-      <Routes>
-        <Route path="/" element={<NonUserProtect>  <Dashboard />  </NonUserProtect>} />
-        <Route path="/auth" element={<Auth />}>
-          <Route path="login" element={<UserProtection>  <UserLogin />  </UserProtection>} />
-          <Route path="register" element={<UserProtection>  <UserRegister />  </UserProtection>} />
-        </Route>
+        <Routes>
 
 
-        <Route path="/settings" element={<NonUserProtect>  <Assests />  </NonUserProtect>}>
-          <Route path="assests" >
-            <Route path="" element={<NonUserProtect>  <AssestsView />  </NonUserProtect>} />
-            <Route path=":arrestId" element={<NonUserProtect> <AssestDiscription/>  </NonUserProtect>}  />
+          <Route path="/login" element={<UserProtection>  <UserLogin />  </UserProtection>} />
+          <Route path="/register" element={<UserProtection>  <UserRegister />  </UserProtection>} />
+
+
+          <Route path="/" element={<NonUserProtect>  <Dashboard />  </NonUserProtect>} />
+
+
+          <Route path="/settings" element={<NonUserProtect>  <Assests />  </NonUserProtect>}>
+            <Route path="assests" >
+              <Route path="" element={<NonUserProtect>  <AssestsView />  </NonUserProtect>} />
+              <Route path=":arrestId" element={<NonUserProtect> <AssestDiscription />  </NonUserProtect>} />
+            </Route>
+            <Route path="employee" element={<NonUserProtect>  <EmployeeView />  </NonUserProtect>} />
+            <Route path="companyinfo" element={<NonUserProtect>  <CompanyInfo />  </NonUserProtect>} />
+            <Route path="siteinfo" element={<NonUserProtect>  <SiteInfo />  </NonUserProtect>} />
+            <Route path="location" element={<NonUserProtect>  <Location />  </NonUserProtect>} />
+            <Route path="categories" element={<NonUserProtect>  <Category />  </NonUserProtect>} />
+            <Route path="assestsfields" element={<NonUserProtect>  <AssestsFields />  </NonUserProtect>} />
+
+            <Route path="suppliers" element={<NonUserProtect>  <Suppliers />  </NonUserProtect>} />
+            <Route path="continents" element={<NonUserProtect> <Countinent /> </NonUserProtect>} />
+            <Route path="countries" element={<NonUserProtect> <Countries /> </NonUserProtect>} />
+            <Route path="states" element={<NonUserProtect> <States /> </NonUserProtect>} />
+            <Route path="cities" element={<NonUserProtect> <Cities /> </NonUserProtect>} />
+            <Route path="location" element={<NonUserProtect> <Location /> </NonUserProtect>} />
+            <Route path="buildings" element={<NonUserProtect> <Buildings /> </NonUserProtect>} />
+            <Route path="floors" element={<NonUserProtect>  <Floors />  </NonUserProtect>} />
+            <Route path="rooms" element={<NonUserProtect>  <Rooms />  </NonUserProtect>} />
+
+            <Route path="timezone" element={<NonUserProtect>  <TimeZone />  </NonUserProtect>} />
+            <Route path="language" element={<NonUserProtect>  <Language />  </NonUserProtect>} />
+            <Route path="companies" element={<NonUserProtect> <Companies />  </NonUserProtect>} />
+            <Route path="department" element={<NonUserProtect>  <Department />  </NonUserProtect>} />
+
           </Route>
-          <Route path="employee" element={<NonUserProtect>  <EmployeeView />  </NonUserProtect>} />
-          <Route path="companyinfo" element={ <NonUserProtect>  <CompanyInfo />  </NonUserProtect>} />
-          <Route path="siteinfo" element={<NonUserProtect>  <SiteInfo />  </NonUserProtect>} />
-          <Route path="location" element={ <NonUserProtect>  <Location />  </NonUserProtect>} />
-          <Route path="categories" element={<NonUserProtect>  <Category />  </NonUserProtect>} />
-          <Route path="assestsfields" element={<NonUserProtect>  <AssestsFields />  </NonUserProtect>} />
+        </Routes>
+      </div>
 
-          <Route path="suppliers" element={<NonUserProtect>  <Suppliers />  </NonUserProtect>}/>
-          <Route path="continents" element={<NonUserProtect> <Countinent /> </NonUserProtect>}/>
-          <Route path="countries" element={<NonUserProtect> <Countries /> </NonUserProtect>}/>
-          <Route path="states" element={<NonUserProtect> <States /> </NonUserProtect>}/>
-          <Route path="cities" element={<NonUserProtect> <Cities /> </NonUserProtect>}/>
-          <Route path="location" element={<NonUserProtect> <Location /> </NonUserProtect>}/>
-          <Route path="buildings" element={<NonUserProtect> <Buildings /> </NonUserProtect>}/>
-          <Route path="floors" element={<NonUserProtect>  <Floors />  </NonUserProtect>}/>
-          <Route path="rooms" element={<NonUserProtect>  <Rooms />  </NonUserProtect>}/>
-
-          <Route path="timezone" element={<NonUserProtect>  <TimeZone />  </NonUserProtect>}/>
-          <Route path="language" element={<NonUserProtect>  <Language />  </NonUserProtect>}/>
-          <Route path="companies" element={<NonUserProtect> <Companies />  </NonUserProtect>}/>
-          <Route path="department" element={<NonUserProtect>  <Department />  </NonUserProtect>}/>
-
-        </Route>
- 
-        
-
-      </Routes>
-    </div>
-      
-      </>
+    </>
   );
 }
 

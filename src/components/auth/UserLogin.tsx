@@ -5,9 +5,9 @@ import { Shell } from "lucide-react";
 import React, { FormEvent } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function UserLogin({}: UserAuthFormProps) {
+export function UserLogin({ }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<string>('');
   const [password, setPassword] = React.useState<string>('');
@@ -32,76 +32,86 @@ export function UserLogin({}: UserAuthFormProps) {
     }
   }
   return (
-    <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
-      <Card className="bg-accent p-4">
-        <CardHeader>
-          <CardTitle>
-            {/* AUth containner */}
-            <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
-                Login your account
-              </h1>
-              <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
-              </p>
-            </div>
-          </CardTitle>
-        </CardHeader>
+    <div className="container relative  h-[100vh] flex flex-col items-center justify-center pt-0">
+      <div
+        className="absolute left-4 top-4 md:left-8 md:top-8"
+      >
+        <h1 className="text-2xl">RFID PAKISTAN</h1>
+      </div>
 
-        {/* UserAuthForm start*/}
-        <CardContent>
-          <div className="grid gap-6">
-            <form onSubmit={HandleSubmit}>
-              <div className="grid gap-2">
-                <div className="grid gap-1">
-                  <Input
-                    id="email"
-                    placeholder="Email.."
-                    type="email"
-                    autoCapitalize="none"
-                    autoComplete="email"
-                    autoCorrect="off"
-                    disabled={isLoading}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
+      <div className="p-14">
+        <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
+          <Card className="bg-accent p-4">
+            <CardHeader>
+              <CardTitle>
+                {/* AUth containner */}
+                <div className="flex flex-col space-y-2 text-center">
+                  <h1 className="text-2xl font-semibold tracking-tight">
+                    Login your account
+                  </h1>
+                  <p className="text-sm text-muted-foreground">
+                    Enter your email below to create your account
+                  </p>
                 </div>
-                <div className="grid gap-1">
-                  <Input
-                    id="password"
-                    placeholder="Passward.."
-                    type="password"
-                    autoCapitalize="none"
-                    autoComplete="Passward"
-                    autoCorrect="off"
-                    disabled={isLoading}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <Button disabled={isLoading} className="mt-2">
-                  {isLoading && (
-                    <Shell className="mr-2  h-4 w-4 animate-spin" />
-                  )}
-                  Log In
-                </Button>
+              </CardTitle>
+            </CardHeader>
 
-                <p className="px-8 text-center text-sm text-muted-foreground ">
-                  Dont have an account,{" "}
-                  <Link
-                    to="/auth/register"
-                    className="underline underline-offset-4 hover:text-primary"
-                  >
-                    Register
-                  </Link>{" "}
-                  .
-                </p>
+            {/* UserAuthForm start*/}
+            <CardContent>
+              <div className="grid gap-6">
+                <form onSubmit={HandleSubmit}>
+                  <div className="grid gap-2">
+                    <div className="grid gap-1">
+                      <Input
+                        id="email"
+                        placeholder="Email.."
+                        type="email"
+                        autoCapitalize="none"
+                        autoComplete="email"
+                        autoCorrect="off"
+                        disabled={isLoading}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="grid gap-1">
+                      <Input
+                        id="password"
+                        placeholder="Passward.."
+                        type="password"
+                        autoCapitalize="none"
+                        autoComplete="Passward"
+                        autoCorrect="off"
+                        disabled={isLoading}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                      />
+                    </div>
+                    <Button disabled={isLoading} className="mt-2">
+                      {isLoading && (
+                        <Shell className="mr-2  h-4 w-4 animate-spin" />
+                      )}
+                      Log In
+                    </Button>
+
+                    <p className="px-8 text-center text-sm text-muted-foreground ">
+                      Dont have an account,{" "}
+                      <Link
+                        to="/register"
+                        className="underline underline-offset-4 hover:text-primary"
+                      >
+                        Register
+                      </Link>{" "}
+                      .
+                    </p>
+                  </div>
+                </form>
               </div>
-            </form>
-          </div>
-        </CardContent>
-        {/* UserAuthForm ends */}
-      </Card>
+            </CardContent>
+            {/* UserAuthForm ends */}
+          </Card>
+        </div>
+      </div>
     </div>
   );
 }
